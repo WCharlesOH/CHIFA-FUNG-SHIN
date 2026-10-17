@@ -1,4 +1,34 @@
-node_modules
-.next
-out
-.taste-skill
+# Dependencias y builds de Next.js
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Agentes de IA, skills y archivos de diseño (no necesarios para la web)
+.claude/
+.agents/
+.taste-skill/
+skills-lock.json
+AGENTS.md
+AGENTES.md
+CLAUDE.md
+DESING.md
+DESIGN.md
+
+# Variables de entorno
+.env
+.env*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
