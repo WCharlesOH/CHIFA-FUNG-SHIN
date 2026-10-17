@@ -1,3 +1,4 @@
+import { asset } from "@/lib/base";
 export const metadata = {
   title: "Política de privacidad | Chifa Fung Shing",
   robots: { index: false },
@@ -6,7 +7,7 @@ export const metadata = {
 export default function Privacidad() {
   return (
     <main className="mx-auto max-w-[44rem] px-4 py-[96px] text-[17px]">
-      <a href="/" className="font-semibold underline decoration-oro decoration-2 underline-offset-4">Volver al inicio</a>
+      <a href={asset("/")} className="font-semibold underline decoration-oro decoration-2 underline-offset-4">Volver al inicio</a>
       <h1 className="mt-10 text-[clamp(40px,6vw,64px)]">Política de privacidad</h1>
       <p className="mt-8">
         Chifa Fung Shing no guarda datos personales en este sitio. Cuando haces un pedido o una reserva, el mensaje se abre en tu WhatsApp y

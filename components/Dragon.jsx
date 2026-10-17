@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/base";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -7,9 +8,9 @@ import { useEffect, useRef, useState } from "react";
 // melena, garras, ojos y cuernos dorados, enroscado sobre el logo.
 // El video trae la transparencia apilada: imagen arriba + máscara abajo; WebGL los junta en un lienzo.
 // Al terminar se queda la pose final (dragon-fung-shing.webp) flotando y siguiendo al cursor.
-const VIDEO = "/assets/dragon-fung-shing.mp4";
-const POSE_FINAL = "/assets/dragon-fung-shing.webp";
-const POSE_INICIO = "/assets/dragon-fung-shing-inicio.webp";
+const VIDEO = asset("/assets/dragon-fung-shing.mp4");
+const POSE_FINAL = asset("/assets/dragon-fung-shing.webp");
+const POSE_INICIO = asset("/assets/dragon-fung-shing-inicio.webp");
 const VW = 1152;
 const VH = 648;
 const VELOCIDAD = 1.25;

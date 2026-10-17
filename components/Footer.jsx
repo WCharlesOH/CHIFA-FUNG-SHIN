@@ -1,3 +1,4 @@
+import { asset } from "@/lib/base";
 import { CREDITOS, SEDES, waLink } from "@/lib/data";
 import { Sello } from "./Header";
 
@@ -51,8 +52,8 @@ export default function Footer() {
           <div>
             <h2 className="mb-3 font-sans text-[17px] font-bold tracking-normal">Legal</h2>
             <ul className="grid gap-2">
-              <li><a className="hover:text-oro" href="/privacidad/">Política de privacidad</a></li>
-              <li><a className="hover:text-oro" href="/privacidad/#reclamaciones">Libro de reclamaciones</a></li>
+              <li><a className="hover:text-oro" href={asset("/privacidad/")}>Política de privacidad</a></li>
+              <li><a className="hover:text-oro" href={asset("/privacidad/#reclamaciones")}>Libro de reclamaciones</a></li>
             </ul>
           </div>
         </nav>

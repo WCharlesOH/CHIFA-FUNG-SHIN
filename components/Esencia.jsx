@@ -1,9 +1,10 @@
+import { asset } from "@/lib/base";
 import Reveal from "./Reveal";
 
 function Mini({ src, alt, pos = "center" }) {
   return (
     <span className="perla mx-[0.12em] inline-block h-[0.85em] w-[1.15em] align-[-0.1em] bg-arroz-tono">
-      <img src={src} alt={alt} width="120" height="90" loading="lazy" className="h-full w-full object-cover" style={{ objectPosition: pos }} />
+      <img src={asset(src)} alt={alt} width="120" height="90" loading="lazy" className="h-full w-full object-cover" style={{ objectPosition: pos }} />
     </span>
   );
 }
@@ -26,7 +27,7 @@ export default function Esencia() {
         <Reveal as="figure" orden={1} className="md:col-span-7">
           <div className="perla aspect-square bg-arroz-tono">
             <img
-              src="/assets/barrio-chino-portada.jpg"
+              src={asset("/assets/barrio-chino-portada.jpg")}
               alt="La portada roja del Barrio Chino de Lima, con gente caminando por la calle Capón"
               width="1920"
               height="1440"
@@ -40,7 +41,7 @@ export default function Esencia() {
           <Reveal as="figure" orden={2} className="w-[60%] md:w-[80%]">
             <div className="perla aspect-square bg-arroz-tono">
               <img
-                src="/assets/placa-capon.jpg"
+                src={asset("/assets/placa-capon.jpg")}
                 alt="Placa de bronce de la Calle Capón con un dragón sobre las palabras Barrio Chino"
                 width="1500"
                 height="2000"

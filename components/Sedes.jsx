@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/base";
 import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import { SEDES, waLink } from "@/lib/data";
@@ -105,7 +106,7 @@ export default function Sedes() {
         </Reveal>
         <Reveal orden={1} className="flex items-center gap-5 lg:col-span-5">
           <span className="perla block size-28 shrink-0 md:size-36">
-            <img src="/assets/capon-pagoda.jpg" alt="Portal de tejas verdes y columnas rojas en la entrada de la calle Capón, Lima" width="1920" height="1440" loading="lazy" className="h-full w-full object-cover object-[62%_40%]" />
+            <img src={asset("/assets/capon-pagoda.jpg")} alt="Portal de tejas verdes y columnas rojas en la entrada de la calle Capón, Lima" width="1920" height="1440" loading="lazy" className="h-full w-full object-cover object-[62%_40%]" />
           </span>
           <p className="text-[17px]">Delivery a La Molina, San Luis y distritos vecinos. Salón familiar y privados para grupos.</p>
         </Reveal>

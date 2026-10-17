@@ -1,3 +1,4 @@
+import { asset } from "@/lib/base";
 import { Noto_Serif_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { SEDES, WHATSAPP } from "@/lib/data";
 import "./globals.css";
@@ -32,9 +33,9 @@ export const metadata = {
     siteName: "Chifa Fung Shing",
     title: "Chifa Fung Shing: el poder del wok, la leyenda del dragón",
     description: "Chifa al wok en Lima. Pide por WhatsApp o reserva tu mesa.",
-    images: [{ url: "/assets/wok-fuego.jpg", width: 1920, height: 1252 }],
+    images: [{ url: asset("/assets/wok-fuego.jpg"), width: 1920, height: 1252 }],
   },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: asset("/icon.svg") },
 };
 
 export const viewport = {

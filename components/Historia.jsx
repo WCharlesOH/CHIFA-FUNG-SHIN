@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/base";
 import { motion, useReducedMotion } from "framer-motion";
 import Reveal from "./Reveal";
 
@@ -51,7 +52,7 @@ export default function Historia() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.img
-              src="/assets/wok-fuego.jpg"
+              src={asset("/assets/wok-fuego.jpg")}
               alt="Un wok sobre la llama, con el fuego subiendo por sus bordes"
               width="1920"
               height="1252"

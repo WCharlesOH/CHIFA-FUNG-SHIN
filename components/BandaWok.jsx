@@ -1,5 +1,6 @@
 "use client";
 
+import { asset } from "@/lib/base";
 import { useReducedMotion } from "framer-motion";
 import Reveal from "./Reveal";
 
@@ -12,8 +13,8 @@ export default function BandaWok() {
         <Reveal className="perla relative aspect-square lg:col-span-6">
           <video
             className="h-full w-full object-cover object-[45%_50%]"
-            src="/assets/wok-video.webm"
-            poster="/assets/wok-video-poster.jpg"
+            src={asset("/assets/wok-video.webm")}
+            poster={asset("/assets/wok-video-poster.jpg")}
             autoPlay={!reduce}
             muted
             loop
