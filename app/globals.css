@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-imperial: #9e1b1b;
+  --color-imperial-deep: #8b0000;
+  --color-oro: #d4af37;
+  --color-oro-vivo: #ffd700;
+  --color-carbon: #121212;
+  --color-humo: #1a1a1a;
+  --color-arroz: #f7f7f7;
+  --color-arroz-tono: #ecebe7;
+
+  --font-display: var(--font-noto-serif-display), "Noto Serif", Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-carbon);
+    color: var(--color-arroz);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-oro-vivo);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-oro);
+    color: var(--color-carbon);
+  }
+}
+
+/* El motivo: la perla del dragón / la boca del wok. Un círculo en todas las escalas. */
+.perla {
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* Botón dorado con anillo que late (CTA principal). */
+.anillo-latido {
+  position: relative;
+  isolation: isolate;
+}
+.anillo-latido::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 2px solid var(--color-oro-vivo);
+  opacity: 0;
+  z-index: -1;
+  animation: latido 2.4s var(--ease-salida) infinite;
+}
+@keyframes latido {
+  0% { transform: scale(0.92); opacity: 0.9; }
+  70% { transform: scale(1.12); opacity: 0; }
+  100% { transform: scale(1.12); opacity: 0; }
+}
+
+/* El dragón posado respira despacio sobre el logo */
+@keyframes dragon-respira {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.012); }
+}
+.dragon-respira {
+  animation: dragon-respira 5s ease-in-out infinite;
+  transform-origin: 49% 51%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .anillo-latido::after,
+  .dragon-respira {
+    animation: none;
+  }
+}
+
+/* Cupón de reserva: muescas circulares (el motivo) y perforación de puntos */
+.cupon::before,
+.cupon::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: var(--color-carbon);
+  left: -16px;
+  top: var(--muesca, 38%);
+}
+.cupon::after {
+  left: auto;
+  right: -16px;
+}
+.perforacion {
+  border-top: 6px dotted var(--color-carbon);
+}
+@media (min-width: 768px) {
+  .cupon::before,
+  .cupon::after {
+    left: calc(46% - 16px);
+    right: auto;
+    top: -16px;
+  }
+  .cupon::after {
+    top: auto;
+    bottom: -16px;
+  }
+  .perforacion {
+    border-top: 0;
+    border-left: 6px dotted var(--color-carbon);
+  }
+}
